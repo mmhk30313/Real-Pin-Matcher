@@ -37,6 +37,7 @@ function findSubmitButton(){
     document.getElementById('submit').style.marginTop = "20px";
     document.getElementById('tested-pin').placeholder = "Required: 4 digits of pin";
     document.getElementById('tested-pin').value = "";
+    document.getElementById('generative-pin').value = "";
     document.getElementById('try-left').innerHTML = "3";
     submitChecker = true;
 }
@@ -91,14 +92,18 @@ function clearingTestedPin(id){
 const submit = document.getElementById('submit');
 submit.addEventListener('click', isMatched);
 function isMatched(){
-    submissionCount -= 1;
     const generative = document.getElementById('generative-pin');
     const tested = document.getElementById('tested-pin');
+    if(generative.value == "" && tested.value ==""){
+        return;
+    }
+    submissionCount -= 1;
     if(parseInt(generative.value)>-1 || parseInt(tested.value)>-1){
         if(generative.value == tested.value){
             document.getElementById('matched').style.display = 'block';
             submissionCount = 3;
             document.getElementById('try-left').innerHTML = "3";
+            generative.value = "";
         }else{
             document.getElementById('not-matched').style.display = 'block';
             document.getElementById('matched').style.display = 'none';
