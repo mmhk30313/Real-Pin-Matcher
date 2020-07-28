@@ -103,7 +103,7 @@ function isMatched(){
             document.getElementById('matched').style.display = 'block';
             submissionCount = 3;
             document.getElementById('try-left').innerHTML = "3";
-            generative.value = "";
+            // generative.value = "";//Jodi generate pin match hower por na dekhte chai...
         }else{
             document.getElementById('not-matched').style.display = 'block';
             document.getElementById('matched').style.display = 'none';
@@ -121,7 +121,7 @@ function isMatched(){
         document.getElementById('try-left').innerHTML = submissionCount.toString();
     }
     // generative.value = "";
-    clearingTestedPin('clear');
+    // clearingTestedPin('clear');//Jodi test-bar er pin na dekhte chai...
 }
 
 //Notification invisible function()
