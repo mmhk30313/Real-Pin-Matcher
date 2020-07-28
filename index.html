@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="generative-pin" oninput="invisibleNotify()" class="form-control" type="text" placeholder="Required: 4 digits of pin">
+                    <button id="generate" class="generate-btn" title="Generate Pin">GP</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-section half-width">
+                    <input id="tested-pin" oninput="invisibleNotify()" class="form-control" type="text" placeholder="Required: 4 digits of pin">
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                              <div id="7" class="button">7</div>
+                              <div id="8" class="button">8</div>
+                              <div id="9" class="button">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div id="4" class="button">4</div>
+                              <div id="5" class="button">5</div>
+                              <div id="6" class="button">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div id="1" class="button">1</div>
+                              <div id="2" class="button">2</div>
+                              <div id="3" class="button">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div id="backspace" class="operation"><</div>
+                                <div id="0" class="button">0</div>
+                                <div id="clear" class="operation">C</div>
+                            </div>
+                            <div id="submit-area">
+                                <button id="submit" type="submit" class="submit-btn">Submit</button>
+                                <p id="try" class="action-left"><span id="try-left">3</span> try left</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notify-section">
+            <p id="not-matched" class="notify"><span id="cross" style="cursor: pointer;">❌</span> Pin Didn't Match, Please try again</p>
+            <p id="matched" class="notify"><a href="https://www.programming-hero.com/" style="text-decoration: none; color: white; cursor: pointer;">✅ Pin Matched... Secret door is opening for you</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
